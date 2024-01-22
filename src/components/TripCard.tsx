@@ -11,7 +11,6 @@ const width = 500;
 const height = width * ratio;
 
 export default function TripCard({ trip }: { trip: Trip }) {
-  console.log(trip);
   const {
     title,
     destination,
@@ -29,7 +28,6 @@ export default function TripCard({ trip }: { trip: Trip }) {
     },
   } = trip;
   const highlightsSplit = highlights.slice(0, 5);
-  console.log(includes);
   return (
     <>
       <div className="flex w-full items-center justify-between bg-white p-4 shadow-lg rounded-3xl">
@@ -38,7 +36,6 @@ export default function TripCard({ trip }: { trip: Trip }) {
           src={images[0].mobile}
           width={width}
           height={height}
-          objectFit="cover"
         />
         <div className="flex flex-col justify-between px-4">
           <div>
@@ -46,8 +43,8 @@ export default function TripCard({ trip }: { trip: Trip }) {
             <h1 className="mt-2  text-xl font-bold">{title} </h1>
             <div className="flex gap-2">
               <ul className="text-sm mb-4">
-                {highlightsSplit.map(({ title }) => (
-                  <li key={title}>
+                {highlightsSplit.map(({ title }, index) => (
+                  <li key={title + index}>
                     <IconSelector option="LOCATION" />
 
                     {title}
@@ -64,7 +61,7 @@ export default function TripCard({ trip }: { trip: Trip }) {
                     item.slice(1).split("_").join(" ").toLocaleLowerCase();
 
                   return (
-                    <li key={title}>
+                    <li key={item}>
                       <IconSelector option={item} />
                       {label}
                     </li>

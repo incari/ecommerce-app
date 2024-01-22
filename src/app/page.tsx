@@ -3,26 +3,32 @@
 import TripCard from "@/components/TripCard";
 import { FeaturedMultiMarket } from "@/api/featureMultiMarket";
 import useSWR from "swr";
-
-const fetcher = (url: string) => fetch(url).then((res) => res.json());
+import { promises as fs } from "fs";
+import { featuredMultiMarket } from "./featureMultiMarket";
 
 export default function Home() {
-  // Data for each card can be an array or fetched from an API
-  // const tripData: FeaturedMultiMarket = featuredMultiMarket;
-  const { data, error } = useSWR("/api/staticData", fetcher);
+  const fetcher = (url: string) =>
+    fetch(url, {
+      mode: "no-cors",
+    }).then(() => featuredMultiMarket);
 
-  if (error) return <div>Error...</div>;
-  if (!data) return <div>Loading...</div>;
+  const { data: tripData, isLoading } = useSWR(
+    "https://api-us.exoticca.com/api/landing/v2/country/botswana",
+    fetcher
+  );
 
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="max-w-screen-xl mx-auto px-20">
       <h1 className="text-3xl font-bold text-center my-8">
         Our recommendation to visit Botswana and neighboring countries
       </h1>
       <div className="grid grid-cols-1 gap-6">
-        {/*     {tripData.map((trip, index) => (
-          <TripCard key={index} trip={trip} />
-        ))} */}
+        {tripData.map((trip) => (
+          <TripCard key={trip.id} trip={trip} />
+        ))}
       </div>
     </div>
   );
