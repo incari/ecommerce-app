@@ -1,19 +1,17 @@
+"use client";
+
 import TripCard from "@/components/TripCard";
 import { FeaturedMultiMarket } from "@/api/featureMultiMarket";
 import useSWR from "swr";
 
-const fetcher = (url) => fetch(url).then((res) => res.json());
-
-/* import { featuredMultiMarket } from "./featureMultiMarket";
-const url = "https://api-us.exoticca.com/api/landing/v2/country/botswana";
- */
+const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function Home() {
   // Data for each card can be an array or fetched from an API
   // const tripData: FeaturedMultiMarket = featuredMultiMarket;
   const { data, error } = useSWR("/api/staticData", fetcher);
-  console.log("🚀 ~ Home ~ data:", data);
 
+  if (error) return <div>Error...</div>;
   if (!data) return <div>Loading...</div>;
 
   return (
