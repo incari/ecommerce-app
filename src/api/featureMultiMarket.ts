@@ -3,6 +3,13 @@ type ImageUrls = {
   tablet: string;
   mobile: string;
 };
+type Includes =
+  | "ACCOMMODATION"
+  | "ALL_FLIGHTS"
+  | "ALL_TRANSFERS"
+  | "SOME_MEALS"
+  | "ACTIVITIES"
+  | "LOCATION";
 
 type MapImage = {
   showImage: boolean;
@@ -66,7 +73,7 @@ type Trip = {
   url: string;
   map: MapImage;
   highlights: Highlight[];
-  includes: string[];
+  includes: Includes[];
   priceDetail: PriceDetail;
   tags: Tag[];
   crafterDetail: CrafterDetail;
@@ -96,4 +103,5 @@ export type {
   FcpFixedPrice,
   Trip,
   FeaturedMultiMarket,
+  Includes,
 };
