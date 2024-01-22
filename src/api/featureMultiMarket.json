@@ -1,0 +1,157 @@
+[
+  {
+    "featuredMultiMarket": [
+      {
+        "id": 9947,
+        "title": "Cape, Kruger, Victoria Falls & Chobe N.P.",
+        "destination": "South Africa, Zimbabwe & Botswana",
+        "images": [
+          {
+            "desktop": "https://static-us.exoticca.com/img/p/9947/222233.jpg",
+            "tablet": "https://static-us.exoticca.com/img/p/9947/222233_t.jpg",
+            "mobile": "https://static-us.exoticca.com/img/p/9947/222233_m.jpg"
+          },
+          {
+            "desktop": "https://static-us.exoticca.com/img/p/9947/222229.jpg",
+            "tablet": "https://static-us.exoticca.com/img/p/9947/222229_t.jpg",
+            "mobile": "https://static-us.exoticca.com/img/p/9947/222229_m.jpg"
+          },
+          {
+            "desktop": "https://static-us.exoticca.com/img/p/9947/222227.jpg",
+            "tablet": "https://static-us.exoticca.com/img/p/9947/222227_t.jpg",
+            "mobile": "https://static-us.exoticca.com/img/p/9947/222227_m.jpg"
+          },
+          {
+            "desktop": "https://static-us.exoticca.com/img/p/9947/222224.jpg",
+            "tablet": "https://static-us.exoticca.com/img/p/9947/222224_t.jpg",
+            "mobile": "https://static-us.exoticca.com/img/p/9947/222224_m.jpg"
+          },
+          {
+            "desktop": "https://static-us.exoticca.com/img/p/9947/222232.jpg",
+            "tablet": "https://static-us.exoticca.com/img/p/9947/222232_t.jpg",
+            "mobile": "https://static-us.exoticca.com/img/p/9947/222232_m.jpg"
+          },
+          {
+            "desktop": "https://static-us.exoticca.com/img/p/9947/222230.jpg",
+            "tablet": "https://static-us.exoticca.com/img/p/9947/222230_t.jpg",
+            "mobile": "https://static-us.exoticca.com/img/p/9947/222230_m.jpg"
+          },
+          {
+            "desktop": "https://static-us.exoticca.com/img/p/9947/222226.jpg",
+            "tablet": "https://static-us.exoticca.com/img/p/9947/222226_t.jpg",
+            "mobile": "https://static-us.exoticca.com/img/p/9947/222226_m.jpg"
+          },
+          {
+            "desktop": "https://static-us.exoticca.com/img/p/9947/222223.jpg",
+            "tablet": "https://static-us.exoticca.com/img/p/9947/222223_t.jpg",
+            "mobile": "https://static-us.exoticca.com/img/p/9947/222223_m.jpg"
+          },
+          {
+            "desktop": "https://static-us.exoticca.com/img/p/9947/222228.jpg",
+            "tablet": "https://static-us.exoticca.com/img/p/9947/222228_t.jpg",
+            "mobile": "https://static-us.exoticca.com/img/p/9947/222228_m.jpg"
+          },
+          {
+            "desktop": "https://static-us.exoticca.com/img/p/9947/222225.jpg",
+            "tablet": "https://static-us.exoticca.com/img/p/9947/222225_t.jpg",
+            "mobile": "https://static-us.exoticca.com/img/p/9947/222225_m.jpg"
+          }
+        ],
+        "productAnimation": null,
+        "days": 15,
+        "url": "/us/tours/africa/9947-cape-kruger-victoria-falls-chobe-np",
+        "map": {
+          "showImage": true,
+          "image": {
+            "desktop": "https://uploads.exoticca.com/p/9947/25916/i/ism_d.jpg",
+            "tablet": "https://uploads.exoticca.com/p/9947/25916/i/ism_d.jpg",
+            "mobile": "https://uploads.exoticca.com/p/9947/25916/i/ism_m.jpg",
+            "horizontal": "https://uploads.exoticca.com/p/9947/25916/i/ism_horizontal_aspect_ratio_3_29.jpg",
+            "horizontalSmall": "https://uploads.exoticca.com/p/9947/25916/i/ism_horizontal_small.jpg"
+          }
+        },
+        "highlights": [
+          {
+            "title": "Chobe National Park",
+            "url": "https://uploads.exoticca.com/global/destination/poi/chobe-national-park.png"
+          },
+          {
+            "title": "Victoria Falls",
+            "url": "https://uploads.exoticca.com/global/destination/poi/victoria-falls.png"
+          },
+          {
+            "title": "Cape Town",
+            "url": "https://uploads.exoticca.com/global/destination/poi/cape-town.png"
+          },
+          {
+            "title": "Johannesburg",
+            "url": "https://uploads.exoticca.com/global/destination/poi/johannesburg.png"
+          },
+          {
+            "title": "Kruger National Park",
+            "url": "https://uploads.exoticca.com/global/destination/poi/kruger-national-park.png"
+          }
+        ],
+        "includes": [
+          "ACCOMMODATION",
+          "ALL_FLIGHTS",
+          "ALL_TRANSFERS",
+          "SOME_MEALS",
+          "ACTIVITIES"
+        ],
+        "priceDetail": {
+          "fromPrice": 3599,
+          "fromPriceBeautify": "$3,599",
+          "discountSaved": 2420,
+          "oldPriceBeautify": "$6,019",
+          "pricingPercentage": 40,
+          "pricePerNight": "$257",
+          "oldPrice": 6019
+        },
+        "tags": [
+          {
+            "alias": "Multi-Country",
+            "name": "Multi-Country",
+            "description": "Travel across multiple countries with the same trip",
+            "categoryName": "",
+            "uri": "/us/landing/multi-country-tours",
+            "tagId": "0a28fab1-87de-4c0b-9928-41c1bde95e77"
+          },
+          {
+            "alias": "Spring",
+            "name": "Spring",
+            "description": "Great destinations for travel in spring",
+            "categoryName": "",
+            "uri": "/us/landing/spring-tours",
+            "tagId": "6876a776-eda4-4b10-828c-d5705cbc8af5"
+          }
+        ],
+        "crafterDetail": {
+          "crafterSentence": "",
+          "crafterName": "Emma",
+          "crafterAvatar": "Crafter image/ELIA_vqjpqa"
+        },
+        "hasPrivateTour": false,
+        "hasSoloTraveller": true,
+        "headLine": "recommended",
+        "tagHeadLine": [
+          {
+            "alias": "PROMOTED",
+            "name": "PROMOTED",
+            "category": "",
+            "uri": "/us/landing/early-bird",
+            "isWinner": false,
+            "uuid": "53fba6e6-fed1-4755-a0e2-0847a5723eba"
+          }
+        ],
+        "isLandOnly": false,
+        "isValid": true,
+        "extraNights": 5,
+        "isNew": false,
+        "isPromoted": true,
+        "isFlashSales": false,
+        "fcpFixedPrice": { "hasFcpFixedPrice": false, "price": 0 }
+      }
+    ]
+  }
+]
