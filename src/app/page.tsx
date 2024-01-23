@@ -1,12 +1,9 @@
 "use client";
 
-import TripCard from "@/components/TripCard";
-import { useGetData } from "../api/useGetData";
 import TripCardSkeleton from "../components/SkeletonTripCard";
+import { TripCard } from "@/components/TripCard";
 import { Skeleton } from "../components/ui/skeleton";
 import { Header } from "../components/Header";
-import { useEffect, useState } from "react";
-import { DestinationsKeys, Markets } from "../api/responseTypes";
 import { useFilteredData } from "./useFilteredData";
 
 export default function Home() {

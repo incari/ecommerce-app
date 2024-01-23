@@ -138,4 +138,11 @@ type Response = {
   hero: Hero;
   destinations: Destinations;
 };
-export type { Response, DestinationsKeys, Destinations, Markets, Includes };
+export type {
+  Response,
+  DestinationsKeys,
+  Destinations,
+  Markets,
+  Includes,
+  PriceDetail
+};

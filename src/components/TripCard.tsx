@@ -5,13 +5,14 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { IconSelector } from "@/lib/Icons";
 import Highlighter from "react-highlight-words";
 import { Markets } from "../api/responseTypes";
+import { PriceDeals } from "./PriceDeals";
 
 const ratio = 324 / 750;
 const width = 500;
 const height = width * ratio;
 
 // Should be the Trip as type but I needed more type to proper type this component
-export default function TripCard({
+export function TripCard({
   trip,
   highlightText
 }: {
@@ -26,12 +27,7 @@ export default function TripCard({
     highlights,
     hasSoloTraveller,
     includes,
-    priceDetail: {
-      pricingPercentage,
-      oldPriceBeautify,
-      fromPriceBeautify,
-      pricePerNight
-    }
+    priceDetail
   } = trip;
   const highlightsSplit = highlights.slice(0, 5);
   return (
@@ -41,8 +37,8 @@ export default function TripCard({
           <Image
             alt={title}
             src={images[0].desktop}
-            width={700}
-            height={500}
+            width={width}
+            height={height}
           />
         </section>
         <section className="order-3 lg:order-2 col-span-12 row-span-2  lg:col-span-5  flex flex-col justify-between px-2">
@@ -108,27 +104,10 @@ export default function TripCard({
           </div>
         </section>
         <section className="order-2 lg:order-3 col-span-4 col-start-1 lg:col-start-12  h-full max-w-full mx-2  flex flex-col gap-1 m-2">
-          <span className="text-md font-bold bg-amber-300 rounded-full text-black w-fit p-1">
-            -{pricingPercentage}%
-          </span>
-          <div className="flex">
-            <span className="text-xs font-medium text-gray-400 line-through">
-              {oldPriceBeautify}
-            </span>
-          </div>
-          <div className="flex ">
-            <span className="flex text-xl font-bold">
-              <Highlighter
-                highlightClassName="YourHighlightClass"
-                searchWords={[highlightText]}
-                autoEscape={true}
-                textToHighlight={fromPriceBeautify}
-              />
-            </span>
-          </div>
-          <span className="block text-left lg:text-right text-xs font-medium text-gray-500 text-nowrap ">
-            Per night: {pricePerNight}
-          </span>
+          <PriceDeals
+            priceDetail={priceDetail}
+            highlightText={highlightText}
+          />
         </section>
         <section className="order-4 lg:order-4 col-span-12  lg:col-start-12 lg:row-start-2 max-w-full m-auto lg:mb-0 lg:mr-0">
           <Button className="mt-4 bg-black text-white">See trip</Button>
