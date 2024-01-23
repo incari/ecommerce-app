@@ -72,7 +72,7 @@ export default function TripCard({
                   : ""}
               </ul>
               <ul className="text-sm mb-4">
-                {includes.map((item: string) => {
+                {includes.map((item) => {
                   const label =
                     item[0] +
                     item.slice(1).split("_").join(" ").toLocaleLowerCase();
