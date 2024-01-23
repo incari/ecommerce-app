@@ -7,58 +7,11 @@ import { Skeleton } from "../components/ui/skeleton";
 import { Header } from "../components/Header";
 import { useEffect, useState } from "react";
 import { DestinationsKeys, Markets } from "../api/responseTypes";
+import { useFilteredData } from "./useFilteredData";
 
 export default function Home() {
-  const { data, isError, isLoading } = useGetData();
-  const [value, setValue] = useState("");
-  const [filteredCards, setFilteredCards] = useState<any[] | null>(null);
-
-  useEffect(() => {
-    if (data) {
-      let allTrips: Markets[] = [];
-
-      for (const key in data.destinations) {
-        const newKey = key as DestinationsKeys;
-        if (Object.prototype.hasOwnProperty.call(data.destinations, key)) {
-          // Use direct property access instead of key
-          const tripArray = data.destinations[newKey];
-          allTrips = allTrips.concat(tripArray);
-        }
-      }
-
-      const searchValueLower = value.toLowerCase();
-
-      const filtered = allTrips.filter((trip) => {
-        const titleMatch = trip.title.toLowerCase().includes(searchValueLower);
-        const destinationMatch = trip.destination
-          .toLowerCase()
-          .includes(searchValueLower);
-        const highlightsMatch = trip.highlights.some((highlight) =>
-          highlight.title.toLowerCase().includes(searchValueLower)
-        );
-        const includesMatch = trip.includes.some((include) =>
-          include.toLowerCase().includes(searchValueLower)
-        );
-        const tagsMatch = trip.tags.some((tag) =>
-          tag.name.toLowerCase().includes(searchValueLower)
-        );
-        const priceMatch = trip.priceDetail.fromPriceBeautify
-          .replace(/[$,]/g, "")
-          .includes(value);
-
-        return (
-          titleMatch ||
-          destinationMatch ||
-          highlightsMatch ||
-          includesMatch ||
-          tagsMatch ||
-          priceMatch
-        );
-      });
-
-      setFilteredCards(filtered);
-    }
-  }, [value, data]);
+  const { data, isError, isLoading, value, setValue, filteredCards } =
+    useFilteredData();
 
   if (isError) {
     return <div>Error</div>;
@@ -81,7 +34,7 @@ export default function Home() {
               {data ? (
                 data.hero.shortDescription
               ) : (
-                <Skeleton className="h-40 w-full" />
+                <Skeleton className="h-20 w-full" />
               )}
             </h1>
             <div className="grid grid-cols-1 gap-6">
