@@ -9,7 +9,8 @@ const ratio = 324 / 750;
 const width = 500;
 const height = width * ratio;
 
-export default function TripCard({ trip }: { trip: Trip }) {
+// Should be the Trip as type but I needed more type to proper type this component
+export default function TripCard({ trip }: { trip: any }) {
   const {
     title,
     destination,
@@ -24,7 +25,7 @@ export default function TripCard({ trip }: { trip: Trip }) {
       fromPriceBeautify,
       pricePerNight
     }
-  } = trip;
+  } = trip as Trip;
   const highlightsSplit = highlights.slice(0, 5);
   return (
     <>
