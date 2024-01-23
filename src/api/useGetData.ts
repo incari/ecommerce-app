@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { response } from "../api/response";
-import { Trip } from "./featureMultiMarket";
 
 // const url = "https://api-us.exoticca.com/api/landing/v2/country/botswana";
 
@@ -20,27 +19,10 @@ const getCards = async () => {
     });
 };
 
-type CardProps = {
-  featuredMultiMarket: Trip[] | [];
-  featureMultimarket: Trip[] | [];
-  monoMarket: Trip[] | [];
-  multiMarket: Trip[] | [];
-};
-
 const useGetData = () => {
   return useQuery({
     queryKey: ["data"],
-    queryFn: getCards,
-    // Filter and select the data for the cards
-    select: (data) => {
-      if (data) {
-        return {
-          cards: { ...data.destinations },
-          hero: { ...data.hero },
-          name: data.name
-        };
-      }
-    }
+    queryFn: getCards
   });
 };
 

@@ -1,10 +1,10 @@
 import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Trip } from "@/api/featureMultiMarket";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { IconSelector } from "@/lib/Icons";
 import Highlighter from "react-highlight-words";
+import { Markets } from "../api/responseTypes";
 
 const ratio = 324 / 750;
 const width = 500;
@@ -15,7 +15,7 @@ export default function TripCard({
   trip,
   highlightText
 }: {
-  trip: any;
+  trip: Markets;
   highlightText: string;
 }) {
   const {
@@ -32,7 +32,7 @@ export default function TripCard({
       fromPriceBeautify,
       pricePerNight
     }
-  } = trip as Trip;
+  } = trip;
   const highlightsSplit = highlights.slice(0, 5);
   return (
     <>
@@ -58,19 +58,21 @@ export default function TripCard({
             </h1>
             <div className="flex gap-2">
               <ul className="text-sm mb-4">
-                {highlightsSplit.map(({ title }, index) => (
-                  <li key={title + index}>
-                    <IconSelector option="LOCATION" />
+                {highlightsSplit.map(
+                  ({ title }: { title: string }, index: number) => (
+                    <li key={title + index}>
+                      <IconSelector option="LOCATION" />
 
-                    {title}
-                  </li>
-                ))}
+                      {title}
+                    </li>
+                  )
+                )}
                 {highlights.length > highlightsSplit.length
                   ? `+ ${highlights.length - highlightsSplit.length} more`
                   : ""}
               </ul>
               <ul className="text-sm mb-4">
-                {includes.map((item) => {
+                {includes.map((item: string) => {
                   const label =
                     item[0] +
                     item.slice(1).split("_").join(" ").toLocaleLowerCase();

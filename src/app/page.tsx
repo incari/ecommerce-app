@@ -4,9 +4,9 @@ import TripCard from "@/components/TripCard";
 import { useGetData } from "../api/useGetData";
 import TripCardSkeleton from "../components/SkeletonTripCard";
 import { Skeleton } from "../components/ui/skeleton";
-import { Trip } from "../api/featureMultiMarket";
 import { Header } from "../components/Header";
 import { useEffect, useState } from "react";
+import { DestinationsKeys, Markets } from "../api/responseTypes";
 
 export default function Home() {
   const { data, isError, isLoading } = useGetData();
@@ -15,22 +15,51 @@ export default function Home() {
 
   useEffect(() => {
     if (data) {
-      let allTrips: Trip[] = [];
+      let allTrips: Markets[] = [];
 
-      // Assuming data.cards is an object with properties like featuredMultiMarket, etc.
-      for (const key in data.cards) {
-        if (Object.prototype.hasOwnProperty.call(data.cards, key)) {
-          const tripArray = data.cards[key] as Trip[];
+      for (const key in data.destinations) {
+        const newKey = key as DestinationsKeys;
+        if (Object.prototype.hasOwnProperty.call(data.destinations, key)) {
+          // Use direct property access instead of key
+          const tripArray = data.destinations[newKey];
           allTrips = allTrips.concat(tripArray);
         }
       }
 
-      const filtered = allTrips.filter((trip) =>
-        trip.title.toLowerCase().includes(value.toLowerCase())
-      );
+      const searchValueLower = value.toLowerCase();
+
+      const filtered = allTrips.filter((trip) => {
+        const titleMatch = trip.title.toLowerCase().includes(searchValueLower);
+        const destinationMatch = trip.destination
+          .toLowerCase()
+          .includes(searchValueLower);
+        const highlightsMatch = trip.highlights.some((highlight) =>
+          highlight.title.toLowerCase().includes(searchValueLower)
+        );
+        const includesMatch = trip.includes.some((include) =>
+          include.toLowerCase().includes(searchValueLower)
+        );
+        const tagsMatch = trip.tags.some((tag) =>
+          tag.name.toLowerCase().includes(searchValueLower)
+        );
+        const priceMatch = trip.priceDetail.fromPriceBeautify
+          .replace(/[$,]/g, "")
+          .includes(value);
+
+        return (
+          titleMatch ||
+          destinationMatch ||
+          highlightsMatch ||
+          includesMatch ||
+          tagsMatch ||
+          priceMatch
+        );
+      });
+
       setFilteredCards(filtered);
     }
   }, [value, data]);
+
   if (isError) {
     return <div>Error</div>;
   }
@@ -60,7 +89,7 @@ export default function Home() {
                 [...Array(4)].map((_, index) => (
                   <TripCardSkeleton key={"skeleton" + index} />
                 ))}
-              {(filteredCards || data?.cards.featuredMultiMarket)?.map(
+              {(filteredCards || data?.destinations.featuredMultiMarket)?.map(
                 (trip) => (
                   <TripCard
                     key={trip.id}
