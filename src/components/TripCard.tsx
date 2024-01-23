@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Trip } from "@/api/featureMultiMarket";
@@ -17,27 +16,28 @@ export default function TripCard({ trip }: { trip: Trip }) {
     images,
     tags,
     highlights,
-    hasPrivateTour,
     hasSoloTraveller,
     includes,
     priceDetail: {
       pricingPercentage,
       oldPriceBeautify,
       fromPriceBeautify,
-      pricePerNight,
-    },
+      pricePerNight
+    }
   } = trip;
   const highlightsSplit = highlights.slice(0, 5);
   return (
     <>
-      <div className="flex w-full items-center justify-between bg-white p-4 shadow-lg rounded-3xl">
-        <Image
-          alt={title}
-          src={images[0].mobile}
-          width={width}
-          height={height}
-        />
-        <div className="flex flex-col justify-between px-4">
+      <div className="layout grid grid-cols-12 bg-white shadow-lg rounded-3xl w-full p-4">
+        <section className="order-1 lg:order-1 col-span-12 row-span-2 lg:col-span-6 bg-slate-600 m-auto">
+          <Image
+            alt={title}
+            src={images[0].desktop}
+            width={700}
+            height={500}
+          />
+        </section>
+        <section className="order-3 lg:order-2 col-span-12 row-span-2  lg:col-span-5  flex flex-col justify-between px-2">
           <div>
             <h2 className="text-lg font-semibold">{destination} </h2>
             <h1 className="mt-2  text-xl font-bold">{title} </h1>
@@ -76,8 +76,11 @@ export default function TripCard({ trip }: { trip: Trip }) {
               <Badge variant="secondary">SOLO TRAVELER</Badge>
             )}
             {tags.map(({ name, description, tagId }) => (
-              <Tooltip key={tagId} disableHoverableContent>
-                <TooltipTrigger>
+              <Tooltip
+                key={tagId}
+                disableHoverableContent
+              >
+                <TooltipTrigger style={{ cursor: "auto" }}>
                   <Badge>{name}</Badge>
                 </TooltipTrigger>
                 <TooltipContent>
@@ -85,73 +88,34 @@ export default function TripCard({ trip }: { trip: Trip }) {
                 </TooltipContent>
               </Tooltip>
             ))}
-
-            <Badge>Nature</Badge>
-            <Badge>Honeymoon</Badge>
-            <Badge>Couples</Badge>
-            <Badge>Safari</Badge>
-            <Badge>Spring</Badge>
           </div>
-        </div>
-        <div className="flex flex-col items-end justify-between h-full">
-          <div>
-            <span className="text-md font-bold text-red-600">
-              -{pricingPercentage}%
-            </span>
-            <div className="flex items-baseline space-x-2">
-              <span className="text-xs font-medium text-gray-400 line-through">
-                {oldPriceBeautify}
-              </span>
-            </div>
-            <div className="flex ">
-              <span className="flex text-xl font-bold">
-                {fromPriceBeautify}
-              </span>
-            </div>
-            <span className="block text-right text-xs font-medium text-gray-500 text-nowrap">
-              Per night: {pricePerNight}
+        </section>
+        <section className="order-2 lg:order-3 col-span-4 col-start-1 lg:col-start-12  h-full max-w-full mx-2  flex flex-col gap-1 m-2">
+          <span className="text-md font-bold bg-amber-300 rounded-full text-black w-fit p-1">
+            -{pricingPercentage}%
+          </span>
+          <div className="flex">
+            <span className="text-xs font-medium text-gray-400 line-through">
+              {oldPriceBeautify}
             </span>
           </div>
-
+          <div className="flex ">
+            <span className="flex text-xl font-bold">{fromPriceBeautify}</span>
+          </div>
+          <span className="block text-left lg:text-right text-xs font-medium text-gray-500 text-nowrap ">
+            Per night: {pricePerNight}
+          </span>
+        </section>
+        <section className="order-4 lg:order-4 col-span-12  lg:col-start-12 lg:row-start-2 max-w-full m-auto lg:mb-0 lg:mr-0">
           <Button className="mt-4 bg-black text-white">See trip</Button>
-        </div>
+
+          {/*     
+        Should have a routing
+        <Link href={`/${id}`}>
+          <Button className="mt-4 bg-black text-white">See trip</Button>
+        </Link> */}
+        </section>
       </div>
-      {/*
-      <Card className="w-full flex flex-row">
-        <div className="w-1/2 relative">
-          <Image
-            alt={imageAlt}
-            src={imageSrc}
-            width={width}
-            height={height}
-            objectFit="cover"
-          />
-        </div>
-        <div className="w-1/2">
-          <CardContent>
-            <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-semibold">{title}</h2>
-              <Badge variant="secondary">{discount}</Badge>
-            </div>
-            <ul className="text-sm mb-4">
-              {listItems.map((item, index) => (
-                <li key={index}>{item}</li>
-              ))}
-            </ul>
-            <div className="flex justify-between items-center">
-              <div className="text-sm">{accommodations}</div>
-              <div className="text-right">
-                <p className="text-lg font-semibold">{price}</p>
-                <p className="text-sm text-gray-500 line-through">{oldPrice}</p>
-              </div>
-            </div>
-          </CardContent>
-          <CardFooter className="flex justify-end">
-            <Button>See trip</Button>
-          </CardFooter>
-        </div>
-      </Card>
-    */}
     </>
   );
 }
