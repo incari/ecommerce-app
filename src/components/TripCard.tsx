@@ -6,6 +6,7 @@ import { IconSelector } from "@/lib/Icons";
 import Highlighter from "react-highlight-words";
 import { Markets } from "../api/responseTypes";
 import { PriceDeals } from "./PriceDeals";
+import { useState } from "react";
 
 const ratio = 324 / 750;
 const width = 500;
@@ -30,13 +31,30 @@ export function TripCard({
     priceDetail
   } = trip;
   const highlightsSplit = highlights.slice(0, 5);
+
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  const src = isHovered ? images[0].desktop : images[1]?.desktop;
+
   return (
     <>
-      <div className="layout grid grid-cols-12 bg-white shadow-lg rounded-3xl w-full p-4">
+      <div
+        className="layout grid grid-cols-12 bg-white shadow-lg rounded-3xl w-full p-4"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
         <section className="order-1 lg:order-1 col-span-12 row-span-2 lg:col-span-6 bg-slate-600 m-auto">
           <Image
             alt={title}
-            src={images[0].desktop}
+            src={src}
             width={width}
             height={height}
           />

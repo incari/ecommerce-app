@@ -46,6 +46,11 @@ export const response: Response = {
             desktop: "https://static-us.exoticca.com/img/p/9947/222233.jpg",
             tablet: "https://static-us.exoticca.com/img/p/9947/222233_t.jpg",
             mobile: "https://static-us.exoticca.com/img/p/9947/222233_m.jpg"
+          },
+          {
+            desktop: "https://static-us.exoticca.com/img/p/9947/222229.jpg",
+            tablet: "https://static-us.exoticca.com/img/p/9947/222229_t.jpg",
+            mobile: "https://static-us.exoticca.com/img/p/9947/222229_m.jpg"
           }
         ],
         productAnimation: null,
@@ -154,9 +159,14 @@ export const response: Response = {
         destination: "Zimbabwe, Botswana, South Africa & Namibia",
         images: [
           {
-            desktop: "https://static-us.exoticca.com/img/p/10467/231137.jpg",
-            tablet: "https://static-us.exoticca.com/img/p/10467/231137_t.jpg",
-            mobile: "https://static-us.exoticca.com/img/p/10467/231137_m.jpg"
+            desktop: "https://static-us.exoticca.com/img/p/10467/231146.jpg",
+            tablet: "https://static-us.exoticca.com/img/p/10467/231146_t.jpg",
+            mobile: "https://static-us.exoticca.com/img/p/10467/231146_m.jpg"
+          },
+          {
+            desktop: "https://static-us.exoticca.com/img/p/10467/231138.jpg",
+            tablet: "https://static-us.exoticca.com/img/p/10467/231138_t.jpg",
+            mobile: "https://static-us.exoticca.com/img/p/10467/231138_m.jpg"
           }
         ],
         productAnimation: null,
@@ -343,9 +353,14 @@ export const response: Response = {
         destination: "Zimbabwe & Botswana",
         images: [
           {
-            desktop: "https://static-us.exoticca.com/img/p/15443/325203.jpg",
-            tablet: "https://static-us.exoticca.com/img/p/15443/325203_t.jpg",
-            mobile: "https://static-us.exoticca.com/img/p/15443/325203_m.jpg"
+            desktop: "https://static-us.exoticca.com/img/p/15443/325209.jpg",
+            tablet: "https://static-us.exoticca.com/img/p/15443/325209_t.jpg",
+            mobile: "https://static-us.exoticca.com/img/p/15443/325209_m.jpg"
+          },
+          {
+            desktop: "https://static-us.exoticca.com/img/p/15443/325207.jpg",
+            tablet: "https://static-us.exoticca.com/img/p/15443/325207_t.jpg",
+            mobile: "https://static-us.exoticca.com/img/p/15443/325207_m.jpg"
           }
         ],
         productAnimation: null,
@@ -463,9 +478,14 @@ export const response: Response = {
         destination: "Zimbabwe, Botswana & Namibia",
         images: [
           {
-            desktop: "https://static-us.exoticca.com/img/p/17170/355582.jpg",
-            tablet: "https://static-us.exoticca.com/img/p/17170/355582_t.jpg",
-            mobile: "https://static-us.exoticca.com/img/p/17170/355582_m.jpg"
+            desktop: "https://static-us.exoticca.com/img/p/17170/357309.jpg",
+            tablet: "https://static-us.exoticca.com/img/p/17170/357309_t.jpg",
+            mobile: "https://static-us.exoticca.com/img/p/17170/357309_m.jpg"
+          },
+          {
+            desktop: "https://static-us.exoticca.com/img/p/17170/355580.jpg",
+            tablet: "https://static-us.exoticca.com/img/p/17170/355580_t.jpg",
+            mobile: "https://static-us.exoticca.com/img/p/17170/355580_m.jpg"
           }
         ],
         productAnimation: null,
