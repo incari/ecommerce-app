@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Technical Assignment - Product Cards Page
+
+## Comments
+
+Thank you for providing me with the opportunity to work on this assignment. I thoroughly enjoyed the challenge and am eager to discuss my solution with you. Should you have any feedback or questions, please feel free to reach out. I am looking forward to the next steps!
+
+As mentioned in the email, I encountered difficulties installing JEST and experienced CORS errors during the API call. To address this, I simulated the API response using axios and React-Query, returning the JSON object from the API. Additionally, I incorporated a setTimeout to mimic the loading time.
+
+Although the tests may not run successfully, the primary checks are in place. I could include some data-testid attributes in specific components if required.
+
+This was my first experience working with images using the new NextJS 13, and I would invest more time to enhance responsiveness and better manage their sizing.
+
+## Demo
+
+[Demo app ](https://ecommerce-app-git-main-incari.vercel.app/)
+
+## Goal
+
+The goal of this assignment is to create a product cards page with TypeScript and tests. You have the option to use NextJS, and you are required to make components reusable. The assignment involves handling desktop and mobile views, fetching data from an API, and implementing a search feature for product cards.
+
+## Features to Implement
+
+1. **Show Product Cards**: Display product cards on the page.
+
+2. **Fetch Data from API**: Use the API [https://api-us.exoticca.com/api/landing/v2/country/botswana](https://api-us.exoticca.com/api/landing/v2/country/botswana) to get product information. You can choose to use either `react-query` or Server-Side Rendering (SSR).
+
+3. **Hover Effect**: In production, when hovering over the image, show the map of the product. Note: This part is out of scope for this assignment.
+
+4. **Search for Product Cards by "Product Title"**: Implement a search feature in the header to search for product cards based on the product title.
+
+5. **Bonus Feature**: Support searching product cards by any data in the product. For example, searching for "Cape" should return product cards that have "Cape Town" in highlights, and searching for "3799" should return product cards with a price of $3,799.
+
+## Screenshots
+
+- **Desktop View**:
+
+  ![Desktop View](/public//desktop.png)
+
+- **Mobile View**:
+
+  ![Mobile View](/public//mobile.png)
+
+## Instructions
+
+1. **TypeScript**: Use TypeScript for the project.
+
+2. **Tests**: Write tests for your components.
+
+3. **NextJS (Optional)**: You have the option to use NextJS.
+
+4. **Reusable Components**: Ensure that your components are reusable.
 
 ## Getting Started
 
-First, run the development server:
+1. Clone this repository.
+
+2. Install dependencies:
+
+   ```bash
+   yarn install
+   ```
+
+3. Start the development server:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+ yarn dev
 ```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
