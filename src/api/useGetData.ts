@@ -35,7 +35,7 @@ const useGetData = () => {
     select: (data) => {
       if (data) {
         return {
-          cards: { ...data.destinations } as CardProps,
+          cards: { ...data.destinations },
           hero: { ...data.hero },
           name: data.name
         };
