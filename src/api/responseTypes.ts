@@ -57,7 +57,7 @@ type CrafterDetail = {
   crafterSentence: string;
   crafterName: string;
   crafterAvatar: string;
-};
+} | null;
 
 type TagHeadLine = {
   alias: string;
@@ -79,7 +79,8 @@ type Includes =
   | "ALL_TRANSFERS"
   | "SOME_MEALS"
   | "ACTIVITIES"
-  | "LOCATION";
+  | "LOCATION"
+  | "BREAKFAST_ONLY";
 
 type Markets = {
   id: number;
@@ -100,7 +101,7 @@ type Markets = {
   crafterDetail: CrafterDetail;
   hasPrivateTour: boolean;
   hasSoloTraveller: boolean;
-  headLine: string;
+  headLine: string | null;
   tagHeadLine: TagHeadLine[];
   isLandOnly: boolean;
   isValid: boolean;
