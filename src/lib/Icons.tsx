@@ -5,7 +5,7 @@ import accommodation from "@/lib/icons/accommodation.svg";
 import activities from "@/lib/icons/activities.svg";
 import meals from "@/lib/icons/meals.svg";
 import Image, { ImageProps } from "next/image";
-import { Includes } from "@/api/featureMultiMarket";
+import { Includes } from "../api/responseTypes";
 
 function Location(props?: ImageProps) {
   const { height = 16, width = 16 } = props || {};
@@ -97,15 +97,30 @@ const IconSelector = ({ option }: { option: Includes }, props: any) => {
       );
     case "ALL_FLIGHTS":
       return (
-        <Flights className="inline-block" height={16} width={16} {...props} />
+        <Flights
+          className="inline-block"
+          height={16}
+          width={16}
+          {...props}
+        />
       );
     case "ALL_TRANSFERS":
       return (
-        <Transfers className="inline-block" height={16} width={16} {...props} />
+        <Transfers
+          className="inline-block"
+          height={16}
+          width={16}
+          {...props}
+        />
       );
     case "SOME_MEALS":
       return (
-        <Meals className="inline-block" height={16} width={16} {...props} />
+        <Meals
+          className="inline-block"
+          height={16}
+          width={16}
+          {...props}
+        />
       );
     case "ACTIVITIES":
       return (
@@ -118,7 +133,12 @@ const IconSelector = ({ option }: { option: Includes }, props: any) => {
       );
     case "LOCATION":
       return (
-        <Location className="inline-block" height={16} width={16} {...props} />
+        <Location
+          className="inline-block"
+          height={16}
+          width={16}
+          {...props}
+        />
       );
     default:
       null;
