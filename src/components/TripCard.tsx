@@ -4,13 +4,20 @@ import { Button } from "@/components/ui/button";
 import { Trip } from "@/api/featureMultiMarket";
 import { Tooltip, TooltipContent, TooltipTrigger } from "./ui/tooltip";
 import { IconSelector } from "@/lib/Icons";
+import Highlighter from "react-highlight-words";
 
 const ratio = 324 / 750;
 const width = 500;
 const height = width * ratio;
 
 // Should be the Trip as type but I needed more type to proper type this component
-export default function TripCard({ trip }: { trip: any }) {
+export default function TripCard({
+  trip,
+  highlightText
+}: {
+  trip: any;
+  highlightText: string;
+}) {
   const {
     title,
     destination,
@@ -41,7 +48,14 @@ export default function TripCard({ trip }: { trip: any }) {
         <section className="order-3 lg:order-2 col-span-12 row-span-2  lg:col-span-5  flex flex-col justify-between px-2">
           <div>
             <h2 className="text-lg font-semibold">{destination} </h2>
-            <h1 className="mt-2  text-xl font-bold">{title} </h1>
+            <h1 className="mt-2  text-xl font-bold">
+              <Highlighter
+                highlightClassName="YourHighlightClass"
+                searchWords={[highlightText]}
+                autoEscape={true}
+                textToHighlight={title}
+              />
+            </h1>
             <div className="flex gap-2">
               <ul className="text-sm mb-4">
                 {highlightsSplit.map(({ title }, index) => (
@@ -101,7 +115,14 @@ export default function TripCard({ trip }: { trip: any }) {
             </span>
           </div>
           <div className="flex ">
-            <span className="flex text-xl font-bold">{fromPriceBeautify}</span>
+            <span className="flex text-xl font-bold">
+              <Highlighter
+                highlightClassName="YourHighlightClass"
+                searchWords={[highlightText]}
+                autoEscape={true}
+                textToHighlight={fromPriceBeautify}
+              />
+            </span>
           </div>
           <span className="block text-left lg:text-right text-xs font-medium text-gray-500 text-nowrap ">
             Per night: {pricePerNight}
